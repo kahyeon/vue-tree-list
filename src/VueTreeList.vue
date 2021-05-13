@@ -26,6 +26,7 @@
         @mouseover="mouseOver"
         @mouseout="mouseOut"
         @click.stop="click"
+        @dblclick.stop="dblclick"
       >
         <span class="vtl-caret vtl-is-small" v-if="model.children && model.children.length > 0">
           <i class="vtl-icon" :class="caretClass" @click.prevent.stop="toggle"></i>
@@ -280,6 +281,15 @@ export default {
     },
 
     click() {
+      // this.rootNode.$emit('click', {
+      //   toggle: this.toggle,
+      //   ...this.model
+      // })
+      console.log('??click!')
+      this.toggle()
+    },
+
+    dblclick() {
       this.rootNode.$emit('click', {
         toggle: this.toggle,
         ...this.model
@@ -409,13 +419,13 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   &.vtl-menu-icon {
-    margin-right: 4px;
+    margin-right: 6px;
     &:hover {
       color: inherit;
     }
   }
   &:hover {
-    color: blue;
+    color: #f9d142;
   }
 }
 

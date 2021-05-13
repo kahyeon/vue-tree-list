@@ -2,13 +2,13 @@
   <div>
     <button @click="addNode">Add Node</button>
     <vue-tree-list
-      @click="onClick"
       @change-name="onChangeName"
       @delete-node="onDel"
       @add-node="onAddNode"
       @drop="drop"
       @drop-before="dropBefore"
       @drop-after="dropAfter"
+      @click="onClick"
       :model="data"
       default-tree-node-name="new node"
       default-leaf-node-name="new leaf"
